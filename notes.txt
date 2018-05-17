@@ -1,0 +1,52 @@
+ECID, USER, PATH, AGENT, ACTION, DATE, SERVERNAME ,CONTENTLENGTH, DATA, STATUSCODE, PERFFLAG, RESTFRAMEWORKVERSION, ERRORINFO, EXECTIME
+
+
+
+filter, count
+
+
+
+
+=> no of hits
+ PATH == '/11.1.13/invoices'   
+=> no of create hits
+ PATH == '/11.1.13/invoices' && ACTION == 'POST' 
+=> no of create hits passed
+ PATH == '/11.1.13/invoices' && ACTION == 'POST' && STATUSCODE == 201  
+=> no of create hits failed
+ PATH == '/11.1.13/invoices' && ACTION == 'POST' && STATUSCODE == 400
+=> no of create hits failed from postman
+ PATH == '/11.1.13/invoices' && ACTION == 'POST' && STATUSCODE == 400 && AGENT == 'postman'
+ PATH == '/11.1.13/invoices' && ACTION == 'POST' && AGENT == 'postman' 
+=> no of create hits failed from ojetap
+ PATH == '/11.1.13/invoices' && ACTION == 'POST' && STATUSCODE == 400 && AGENT == 'ojetap'
+ PATH == '/11.1.13/invoices' && ACTION == 'POST' && AGENT == 'ojetap'
+=> no of create hits failed from ojetap by user FINUSER1
+ PATH == '/11.1.13/invoices' && ACTION == 'POST' && STATUSCODE == 400 && AGENT == 'ojetap' && USER == 'FINUSER1'
+=> no of create hits failed from ojetap by user AP_SUPV_OPERATIONS
+ PATH == '/11.1.13/invoices' && ACTION == 'POST' && STATUSCODE == 400 && AGENT == 'ojetap' && USER == 'AP_SUPV_OPERATIONS'
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+1. record with an ecid    ECID=='0e5f1fb618dfdb34:-59fec6e1:1628ab9ba5d:-8000-0000000000000365'   
+count 
+
+2. PATH.includes('invoices') - total no of invoices
+
+4.
+
+5. PATH.includes('invoices') && USER == 'AP_SUPV_OPERATIONS' && STATUSCODE == 201
+
+6. PATH.includes('invoices') && USER == 'FINUSER1' && STATUSCODE == 201
+ 
+
+
+
